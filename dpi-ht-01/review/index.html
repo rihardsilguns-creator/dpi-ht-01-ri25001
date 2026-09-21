@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DPI assessor review queue" />
+    <title>DPI | Review Queue</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../assets/site.css" />
+  </head>
+  <body data-page="review">
+    <header class="topbar"><a class="brand" href="../">DPI <span>TAKEOVER REVIEW</span></a><nav aria-label="Primary navigation"><a href="../">Accounts</a><a class="active" href="./">Review queue</a><a href="../submission.json">Submission JSON</a></nav></header>
+    <main class="shell">
+      <section class="review-head"><div><p class="eyebrow">Assessor view · certification controls</p><h1>Decision review queue</h1><p class="lede">Every answer is evidence-linked. Material judgments show both AI positions, the student certification and the financial effect.</p></div><div class="review-counts" id="reviewCounts"></div></section>
+      <section class="filterbar" aria-label="Decision filters"><button class="selected" data-filter="all">All 100</button><button data-filter="material_judgment">Material judgments</button><button data-filter="low">Low confidence</button><button data-filter="open">Flagged decisions</button></section>
+      <section class="decision-list" id="decisionList" aria-live="polite"></section>
+    </main>
+    <footer>Student-certified submission · Evidence limitations remain disclosed in the uncertainty register.</footer>
+    <script type="module" src="../assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DPI hostile-takeover accounting reconstruction" />
+    <title>DPI | Takeover Review</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body data-page="main">
+    <header class="topbar">
+      <a class="brand" href="./">DPI <span>TAKEOVER REVIEW</span></a>
+      <nav aria-label="Primary navigation"><a class="active" href="./">Accounts</a><a href="review/">Review queue</a><a href="submission.json">Submission JSON</a></nav>
+    </header>
+    <main class="shell">
+      <section class="case-head">
+        <div><p class="eyebrow">DPI-HT-01 · 31 August 2026 · EUR</p><h1>Corrected accounts,<br><em>not the takeover deck.</em></h1></div>
+        <aside class="draft-card"><span class="signal amber"></span><strong>Student-certified</strong><p>Two limitations remain visible: inventory and unquantified insurance evidence.</p><a href="review/">Open review queue →</a></aside>
+      </section>
+
+      <section class="metric-grid" aria-label="Key reconstructed figures" id="metrics"></section>
+
+      <section class="split-section">
+        <div class="panel"><div class="panel-title"><p class="eyebrow">Corrected profit and loss</p><h2>Profit bridge</h2></div><div id="pnl" class="ledger"></div></div>
+        <div class="panel"><div class="panel-title"><p class="eyebrow">31 August position</p><h2>Balance sheet</h2></div><div id="balance" class="ledger"></div></div>
+      </section>
+
+      <section class="split-section">
+        <div class="panel"><div class="panel-title"><p class="eyebrow">Cash trace</p><h2>Direct cash flow</h2></div><div id="cashflow" class="ledger"></div></div>
+        <div class="panel"><div class="panel-title"><p class="eyebrow">Required checks</p><h2>Reconciliations</h2></div><div id="reconciliations" class="check-list"></div></div>
+      </section>
+
+      <section class="panel wide"><div class="panel-title"><p class="eyebrow">Evidence-led schedules</p><h2>What supports the accounts</h2></div><div class="schedule-grid" id="schedules"></div></section>
+
+      <section class="split-section">
+        <div class="panel"><div class="panel-title"><p class="eyebrow">Source traceability</p><h2>Evidence register</h2></div><p class="small-note">Reliability order: bank and signed contracts; third-party invoices; warehouse and delivery records; internal operations; management reporting.</p><div id="evidence" class="evidence-register"></div></div>
+        <div class="panel"><div class="panel-title"><p class="eyebrow">What remains open</p><h2>Uncertainty register</h2></div><div id="uncertainties" class="uncertainty-list"></div></div>
+      </section>
+
+      <section class="panel wide"><div class="panel-title"><p class="eyebrow">Submission control</p><h2>Decision coverage</h2></div><div id="decisionSummary" class="decision-summary"></div></section>
+
+      <section class="panel wide"><div class="panel-title"><p class="eyebrow">Board view</p><h2>Control actions before valuation</h2></div><div class="board-grid"><div id="board"></div><div class="warning-note"><span class="signal red"></span><div><strong>Do not use the claimed €312,000 management profit.</strong><p>It includes €90,000 of undelivered September deposits as revenue and €50,000 of borrowing as income.</p></div></div></div></section>
+    </main>
+    <footer>Student-certified reconstruction · Source-linked decisions in <a href="review/">Review queue</a> · <a href="submission.json">Machine-readable submission</a></footer>
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>
