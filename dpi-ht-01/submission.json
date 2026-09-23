@@ -578,11 +578,11 @@
       "independentChallenge": "Agent 2 agrees: September delivery dates make the August deposits unearned.",
       "studentReasoning": "I classify the deposits as contract liabilities because delivery is after 31 August.",
       "statementEffect": {
-        "profit": -90,
+        "profit": -90000,
         "cash": 0,
         "assets": 0,
-        "liabilities": 90,
-        "equity": -90
+        "liabilities": 90000,
+        "equity": -90000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of management’s revenue entry",
@@ -604,11 +604,11 @@
       "independentChallenge": "Agent 2 agrees: the repayment obligation outweighs management’s income label.",
       "studentReasoning": "I classify the receipt as a loan because it must be repaid.",
       "statementEffect": {
-        "profit": -50,
+        "profit": -50000,
         "cash": 0,
         "assets": 0,
-        "liabilities": 50,
-        "equity": -50
+        "liabilities": 50000,
+        "equity": -50000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of management’s income entry",
@@ -630,11 +630,11 @@
       "independentChallenge": "Agent 2 agrees: the installed machine is a long-term productive asset.",
       "studentReasoning": "I capitalise the separately identified machine as PPE.",
       "statementEffect": {
-        "profit": 60,
+        "profit": 60000,
         "cash": 0,
-        "assets": 60,
+        "assets": 60000,
         "liabilities": 0,
-        "equity": 60
+        "equity": 60000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of management’s repair-expense entry",
@@ -656,11 +656,11 @@
       "independentChallenge": "Agent 2 agrees: the photo booth is equipment, not a one-period marketing cost.",
       "studentReasoning": "I capitalise the photo booth because it is available for use.",
       "statementEffect": {
-        "profit": 20,
+        "profit": 20000,
         "cash": 0,
-        "assets": 20,
+        "assets": 20000,
         "liabilities": 0,
-        "equity": 20
+        "equity": 20000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of management’s marketing-expense entry",
@@ -682,11 +682,11 @@
       "independentChallenge": "Agent 2 agrees: the work restored output without improving capacity or useful life.",
       "studentReasoning": "I expense the repair because it only restores normal output.",
       "statementEffect": {
-        "profit": -10,
+        "profit": -10000,
         "cash": 0,
-        "assets": -10,
+        "assets": -10000,
         "liabilities": 0,
-        "equity": -10
+        "equity": -10000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of management’s PPE entry",
@@ -709,10 +709,10 @@
       "studentReasoning": "I classify the villa payment as an owner distribution, not a business expense.",
       "statementEffect": {
         "profit": 0,
-        "cash": -70,
-        "assets": -70,
+        "cash": -70000,
+        "assets": -70000,
         "liabilities": 0,
-        "equity": -70
+        "equity": -70000
       },
       "changedFromAI": false,
       "effectBasis": "Original cash distribution transaction",
@@ -735,10 +735,10 @@
       "studentReasoning": "I classify the owner-card payment as an owner distribution.",
       "statementEffect": {
         "profit": 0,
-        "cash": -40,
-        "assets": -40,
+        "cash": -40000,
+        "assets": -40000,
         "liabilities": 0,
-        "equity": -40
+        "equity": -40000
       },
       "changedFromAI": false,
       "effectBasis": "Original cash distribution transaction",
@@ -760,15 +760,15 @@
       "independentChallenge": "Agent 2 agrees: warehouse evidence reports EUR 405,000 consumed before impairment.",
       "studentReasoning": "I use EUR 405,000 as materials COGS and disclose the count difference.",
       "statementEffect": {
-        "profit": -405,
+        "profit": -405000,
         "cash": 0,
-        "assets": -405,
+        "assets": -405000,
         "liabilities": 0,
-        "equity": -405
+        "equity": -405000
       },
       "changedFromAI": false,
-      "effectBasis": "Correction of management’s cost classification",
-      "statementEffectNote": "Recognises materials consumed as COGS and reduces inventory; no additional cash payment occurs in this correction.",
+      "effectBasis": "Materials-consumption adjustment",
+      "statementEffectNote": "Recognises EUR 405,000 of materials consumed in delivered products as COGS and reduces inventory. This is consumption, not a presentation-only reclassification; no additional cash payment occurs in this correction.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -878,11 +878,11 @@
       "independentChallenge": "Agent 2 agrees: the independent schedule supports EUR 24,000 depreciation.",
       "studentReasoning": "I record EUR 24,000 depreciation and disclose the limited useful-life detail.",
       "statementEffect": {
-        "profit": -24,
+        "profit": -24000,
         "cash": 0,
-        "assets": -24,
+        "assets": -24000,
         "liabilities": 0,
-        "equity": -24
+        "equity": -24000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted period-end depreciation",
@@ -904,11 +904,11 @@
       "independentChallenge": "Agent 2 agrees: the liquidator notice confirms the receivable was irrecoverable at 31 August.",
       "studentReasoning": "I write off EUR 18,000 because recovery is not expected.",
       "statementEffect": {
-        "profit": -18,
+        "profit": -18000,
         "cash": 0,
-        "assets": -18,
+        "assets": -18000,
         "liabilities": 0,
-        "equity": -18
+        "equity": -18000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted receivable impairment",
@@ -930,11 +930,11 @@
       "independentChallenge": "Agent 2 agrees: warehouse evidence supports nil recoverable value for the wet stock.",
       "studentReasoning": "I write down EUR 22,000 to nil; disposal cost remains separate.",
       "statementEffect": {
-        "profit": -22,
+        "profit": -22000,
         "cash": 0,
-        "assets": -22,
+        "assets": -22000,
         "liabilities": 0,
-        "equity": -22
+        "equity": -22000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted inventory write-down",
@@ -956,11 +956,11 @@
       "independentChallenge": "Agent 2 agrees: counsel assesses the claim as probable with a EUR 25,000 best estimate.",
       "studentReasoning": "I recognise EUR 25,000 and disclose the EUR 20,000-30,000 range.",
       "statementEffect": {
-        "profit": -25,
+        "profit": -25000,
         "cash": 0,
         "assets": 0,
-        "liabilities": 25,
-        "equity": -25
+        "liabilities": 25000,
+        "equity": -25000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted legal provision",
@@ -1028,11 +1028,11 @@
       "independentChallenge": "Agent 2 agrees: delivery and acceptance satisfy the performance obligation.",
       "studentReasoning": "I recognise EUR 180,000 on delivery and acceptance.",
       "statementEffect": {
-        "profit": 180,
-        "cash": 180,
-        "assets": 180,
+        "profit": 180000,
+        "cash": 180000,
+        "assets": 180000,
         "liabilities": 0,
-        "equity": 180
+        "equity": 180000
       },
       "changedFromAI": false,
       "effectBasis": "Original delivered-sale transaction",
@@ -1054,11 +1054,11 @@
       "independentChallenge": "Agent 2 agrees: delivery, not collection, determines revenue recognition.",
       "studentReasoning": "I recognise EUR 200,000 and retain EUR 58,000 as a receivable.",
       "statementEffect": {
-        "profit": 200,
-        "cash": 142,
-        "assets": 200,
+        "profit": 200000,
+        "cash": 142000,
+        "assets": 200000,
         "liabilities": 0,
-        "equity": 200
+        "equity": 200000
       },
       "changedFromAI": false,
       "effectBasis": "Original delivered-sale transaction",
@@ -1080,11 +1080,11 @@
       "independentChallenge": "Agent 2 agrees: completion and customer acceptance support revenue recognition.",
       "studentReasoning": "I recognise EUR 100,000 because the event was completed by 29 April.",
       "statementEffect": {
-        "profit": 100,
-        "cash": 70,
-        "assets": 100,
+        "profit": 100000,
+        "cash": 70000,
+        "assets": 100000,
         "liabilities": 0,
-        "equity": 100
+        "equity": 100000
       },
       "changedFromAI": false,
       "effectBasis": "Original delivered-sale transaction",
@@ -1106,11 +1106,11 @@
       "independentChallenge": "Agent 2 agrees: delivery and acceptance support the full EUR 120,000.",
       "studentReasoning": "I recognise EUR 120,000 and retain EUR 25,000 as a receivable.",
       "statementEffect": {
-        "profit": 120,
-        "cash": 95,
-        "assets": 120,
+        "profit": 120000,
+        "cash": 95000,
+        "assets": 120000,
         "liabilities": 0,
-        "equity": 120
+        "equity": 120000
       },
       "changedFromAI": false,
       "effectBasis": "Original delivered-sale transaction",
@@ -1132,11 +1132,11 @@
       "independentChallenge": "Agent 2 agrees: the September events were unperformed at 31 August.",
       "studentReasoning": "I defer EUR 90,000 until the events are delivered.",
       "statementEffect": {
-        "profit": -90,
+        "profit": -90000,
         "cash": 0,
         "assets": 0,
-        "liabilities": 90,
-        "equity": -90
+        "liabilities": 90000,
+        "equity": -90000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of management’s revenue entry",
@@ -1182,11 +1182,11 @@
       "independentChallenge": "Agent 2 agrees: the liquidator notice supports a full EUR 18,000 write-off.",
       "studentReasoning": "I use EUR 18,000 because no distribution is expected.",
       "statementEffect": {
-        "profit": -18,
+        "profit": -18000,
         "cash": 0,
-        "assets": -18,
+        "assets": -18000,
         "liabilities": 0,
-        "equity": -18
+        "equity": -18000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted receivable impairment",
@@ -1208,11 +1208,11 @@
       "independentChallenge": "Agent 2 agrees: count evidence supports zero recoverable value.",
       "studentReasoning": "I estimate the write-down at EUR 22,000 and disclose disposal separately.",
       "statementEffect": {
-        "profit": -22,
+        "profit": -22000,
         "cash": 0,
-        "assets": -22,
+        "assets": -22000,
         "liabilities": 0,
-        "equity": -22
+        "equity": -22000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted inventory write-down",
@@ -1234,11 +1234,11 @@
       "independentChallenge": "Agent 2 agrees: EUR 25,000 is counsel’s best estimate within the range.",
       "studentReasoning": "I use the external EUR 25,000 best estimate.",
       "statementEffect": {
-        "profit": -25,
+        "profit": -25000,
         "cash": 0,
         "assets": 0,
-        "liabilities": 25,
-        "equity": -25
+        "liabilities": 25000,
+        "equity": -25000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted legal provision",
@@ -1260,11 +1260,11 @@
       "independentChallenge": "Agent 2 agrees: the EUR 24,000 independent schedule is stronger than management’s zero entry.",
       "studentReasoning": "I record EUR 24,000 and disclose limited useful-life detail.",
       "statementEffect": {
-        "profit": -24,
+        "profit": -24000,
         "cash": 0,
-        "assets": -24,
+        "assets": -24000,
         "liabilities": 0,
-        "equity": -24
+        "equity": -24000
       },
       "changedFromAI": false,
       "effectBasis": "Correction of omitted period-end depreciation",

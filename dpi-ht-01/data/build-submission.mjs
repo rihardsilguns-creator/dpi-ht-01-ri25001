@@ -87,6 +87,8 @@ const answers = {
   D099: row('Yes, conditionally. Continue the core delivered-product and event operations subject to cash controls and corrected accounts.', [E.contracts, E.post])
 };
 
+// Material statement-effect arrays are maintained in EUR thousands for concise
+// source data, then converted to whole EUR when writing submission.json.
 const material = {
   D041: ['Classify EUR 90,000 as contract liability, not revenue.', E.contracts, [-90, 0, 0, 90, -90]],
   D042: ['Classify EUR 50,000 as bank loan, not income.', E.loans, [-50, 0, 0, 50, -50]],
@@ -125,7 +127,7 @@ const effectContext = {
   D045: ['Correction of management’s PPE entry', 'Removes a capitalised repair and recognises an expense; the original cash payment is unchanged.'],
   D046: ['Original cash distribution transaction', 'The company paid cash for a non-business villa reservation, reducing cash, total assets and equity.'],
   D047: ['Original cash distribution transaction', 'The company paid cash for owner-card spending, reducing cash, total assets and equity.'],
-  D048: ['Correction of management’s cost classification', 'Recognises materials consumed as COGS and reduces inventory; no additional cash payment occurs in this correction.'],
+  D048: ['Materials-consumption adjustment', 'Recognises EUR 405,000 of materials consumed in delivered products as COGS and reduces inventory. This is consumption, not a presentation-only reclassification; no additional cash payment occurs in this correction.'],
   D049: ['Presentation reclassification only', 'Moves payroll within expenses; total profit, cash, assets, liabilities and equity do not change.'],
   D056: ['Correction of omitted period-end depreciation', 'Records the period-end non-cash depreciation charge and reduces PPE carrying value.'],
   D057: ['Correction of omitted receivable impairment', 'Records the R-17 impairment at 31 August; it does not represent a new cash payment.'],
@@ -185,7 +187,7 @@ for (const decision of template.decisions) {
     decision.aiProposal = `Agent 1 proposal: ${proposal}`;
     decision.independentChallenge = independentChallenge;
     decision.studentReasoning = studentReasoning;
-    decision.statementEffect = Object.fromEntries(['profit', 'cash', 'assets', 'liabilities', 'equity'].map((key, i) => [key, effect[i]]));
+    decision.statementEffect = Object.fromEntries(['profit', 'cash', 'assets', 'liabilities', 'equity'].map((key, i) => [key, effect[i] == null ? null : effect[i] * 1000]));
     const [effectBasis, statementEffectNote] = effectContext[decision.id];
     decision.effectBasis = effectBasis;
     decision.statementEffectNote = statementEffectNote;
