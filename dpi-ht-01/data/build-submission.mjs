@@ -90,29 +90,59 @@ const answers = {
 const material = {
   D041: ['Classify EUR 90,000 as contract liability, not revenue.', E.contracts, [-90, 0, 0, 90, -90]],
   D042: ['Classify EUR 50,000 as bank loan, not income.', E.loans, [-50, 0, 0, 50, -50]],
-  D043: ['Capitalize the EUR 60,000 packaging machine as PPE.', E.purchases, [0, 0, 60, 0, 60]],
-  D044: ['Capitalize the EUR 20,000 photo booth as PPE.', E.purchases, [0, 0, 20, 0, 20]],
+  D043: ['Capitalize the EUR 60,000 packaging machine as PPE.', E.purchases, [60, 0, 60, 0, 60]],
+  D044: ['Capitalize the EUR 20,000 photo booth as PPE.', E.purchases, [20, 0, 20, 0, 20]],
   D045: ['Expense EUR 10,000 machine repair because it restored normal output.', E.purchases, [-10, 0, -10, 0, -10]],
-  D046: ['Classify EUR 70,000 villa payment as owner distribution.', E.loans, [0, 0, 0, 0, -70]],
-  D047: ['Classify EUR 40,000 owner-card spending as owner distribution.', E.loans, [0, 0, 0, 0, -40]],
+  D046: ['Classify EUR 70,000 villa payment as owner distribution.', E.loans, [0, -70, -70, 0, -70]],
+  D047: ['Classify EUR 40,000 owner-card spending as owner distribution.', E.loans, [0, -40, -40, 0, -40]],
   D048: ['Classify EUR 405,000 of materials as physical-product COGS, subject to inventory variance.', E.warehouse, [-405, 0, -405, 0, -405]],
   D049: ['Classify EUR 80,000 event-delivery payroll as direct service cost.', E.payroll, [0, 0, 0, 0, 0]],
   D056: ['Recognise EUR 24,000 depreciation expense and accumulated depreciation.', E.assets, [-24, 0, -24, 0, -24]],
   D057: ['Write off/allow EUR 18,000 for R-17 insolvency.', E.post, [-18, 0, -18, 0, -18]],
   D058: ['Write down damaged inventory by EUR 22,000.', E.warehouse, [-22, 0, -22, 0, -22]],
   D059: ['Recognise EUR 25,000 legal provision.', E.post, [-25, 0, 0, 25, -25]],
-  D064: ['Recognise EUR 180,000 NorthStar revenue on delivery and acceptance.', E.contracts, [180, 180, 0, 0, 180]],
-  D065: ['Recognise EUR 200,000 Freedom revenue on delivery and acceptance.', E.contracts, [200, 142, 58, 0, 200]],
-  D066: ['Recognise EUR 100,000 Phoenix event revenue on completion.', E.contracts, [100, 70, 30, 0, 100]],
-  D067: ['Recognise EUR 120,000 Liberty revenue on delivery and acceptance.', E.contracts, [120, 95, 25, 0, 120]],
-  D068: ['Defer EUR 90,000 undelivered September events as contract liabilities.', E.contracts, [-90, 90, 0, 90, -90]],
+  D064: ['Recognise EUR 180,000 NorthStar revenue on delivery and acceptance.', E.contracts, [180, 180, 180, 0, 180]],
+  D065: ['Recognise EUR 200,000 Freedom revenue on delivery and acceptance.', E.contracts, [200, 142, 200, 0, 200]],
+  D066: ['Recognise EUR 100,000 Phoenix event revenue on completion.', E.contracts, [100, 70, 100, 0, 100]],
+  D067: ['Recognise EUR 120,000 Liberty revenue on delivery and acceptance.', E.contracts, [120, 95, 120, 0, 120]],
+  D068: ['Defer EUR 90,000 undelivered September events as contract liabilities.', E.contracts, [-90, 0, 0, 90, -90]],
   D071: ['Estimate bad-debt write-off at EUR 18,000 using the liquidator notice.', E.post, [-18, 0, -18, 0, -18]],
   D072: ['Estimate damaged-stock write-down at EUR 22,000 to nil recoverable value.', E.warehouse, [-22, 0, -22, 0, -22]],
   D073: ['Estimate legal provision at counsel’s EUR 25,000 best estimate.', E.loans, [-25, 0, 0, 25, -25]],
   D074: ['Estimate period depreciation at EUR 24,000 per independent schedule.', E.assets, [-24, 0, -24, 0, -24]],
-  D075: ['Use conservative closing inventory of EUR 112,000 from roll-forward after EUR 22,000 write-down; disclose the EUR 9,000 count conflict.', E.warehouse, [-31, 0, -31, 0, -31]],
-  D091: ['Approve corrected accounts before valuation or any earn-out analysis.', [E.management, E.post], [0, 0, 0, 0, 0]],
-  D100: ['Do not use management’s claimed EUR 312,000 profit for earn-out.', E.management, [0, 0, 0, 0, 0]]
+  D075: ['Use conservative closing inventory of EUR 112,000 from roll-forward after EUR 22,000 write-down; disclose the EUR 9,000 count conflict.', E.warehouse, [null, null, null, null, null]],
+  D091: ['Approve corrected accounts before valuation or any earn-out analysis.', [E.management, E.post], [null, null, null, null, null]],
+  D100: ['Do not use management’s claimed EUR 312,000 profit for earn-out.', E.management, [null, null, null, null, null]]
+};
+
+// Each material effect uses one declared basis. This prevents a transaction's
+// cash movement being mixed with a correction to management's prior entry.
+const effectContext = {
+  D041: ['Correction of management’s revenue entry', 'Reclassifies cash already received from revenue to a contract liability; it does not create new cash.'],
+  D042: ['Correction of management’s income entry', 'Reclassifies the bank receipt from income to a repayment obligation; the cash receipt is already recorded.'],
+  D043: ['Correction of management’s repair-expense entry', 'Reverses the EUR 60,000 expense and recognises PPE; the original cash payment is unchanged.'],
+  D044: ['Correction of management’s marketing-expense entry', 'Reverses the EUR 20,000 expense and recognises PPE; the original cash payment is unchanged.'],
+  D045: ['Correction of management’s PPE entry', 'Removes a capitalised repair and recognises an expense; the original cash payment is unchanged.'],
+  D046: ['Original cash distribution transaction', 'The company paid cash for a non-business villa reservation, reducing cash, total assets and equity.'],
+  D047: ['Original cash distribution transaction', 'The company paid cash for owner-card spending, reducing cash, total assets and equity.'],
+  D048: ['Correction of management’s cost classification', 'Recognises materials consumed as COGS and reduces inventory; no additional cash payment occurs in this correction.'],
+  D049: ['Presentation reclassification only', 'Moves payroll within expenses; total profit, cash, assets, liabilities and equity do not change.'],
+  D056: ['Correction of omitted period-end depreciation', 'Records the period-end non-cash depreciation charge and reduces PPE carrying value.'],
+  D057: ['Correction of omitted receivable impairment', 'Records the R-17 impairment at 31 August; it does not represent a new cash payment.'],
+  D058: ['Correction of omitted inventory write-down', 'Reduces damaged inventory to its recoverable value; it does not represent a new cash payment.'],
+  D059: ['Correction of omitted legal provision', 'Records the period-end expense and liability before any legal settlement cash is paid.'],
+  D064: ['Original delivered-sale transaction', 'EUR 180,000 cash was collected on an accepted delivery, increasing total assets and equity.'],
+  D065: ['Original delivered-sale transaction', 'EUR 142,000 cash plus EUR 58,000 receivable increases total assets by EUR 200,000.'],
+  D066: ['Original delivered-sale transaction', 'EUR 70,000 cash plus EUR 30,000 receivable increases total assets by EUR 100,000.'],
+  D067: ['Original delivered-sale transaction', 'EUR 95,000 cash plus EUR 25,000 receivable increases total assets by EUR 120,000.'],
+  D068: ['Correction of management’s revenue entry', 'Reclassifies cash already received from revenue to a contract liability; it does not create new cash.'],
+  D071: ['Correction of omitted receivable impairment', 'Records the R-17 impairment at 31 August; it does not represent a new cash payment.'],
+  D072: ['Correction of omitted inventory write-down', 'Reduces damaged inventory to its recoverable value; it does not represent a new cash payment.'],
+  D073: ['Correction of omitted legal provision', 'Records the period-end expense and liability before any legal settlement cash is paid.'],
+  D074: ['Correction of omitted period-end depreciation', 'Records the period-end non-cash depreciation charge and reduces PPE carrying value.'],
+  D075: ['Closing-balance measurement selection — not a new journal entry', 'EUR 112,000 is the selected closing inventory balance. Its component adjustments are D048 and D058; the EUR 9,000 count conflict is disclosed, not booked.'],
+  D091: ['Governance approval conclusion — not a journal entry', 'This decision controls whether the corrected accounts are approved for valuation; it has no direct statement effect.'],
+  D100: ['Governance comparison — not a journal entry', 'This decision rejects an unreliable management-profit benchmark for earn-out purposes; it has no direct statement effect.']
 };
 
 const reviewNotes = {
@@ -156,6 +186,9 @@ for (const decision of template.decisions) {
     decision.independentChallenge = independentChallenge;
     decision.studentReasoning = studentReasoning;
     decision.statementEffect = Object.fromEntries(['profit', 'cash', 'assets', 'liabilities', 'equity'].map((key, i) => [key, effect[i]]));
+    const [effectBasis, statementEffectNote] = effectContext[decision.id];
+    decision.effectBasis = effectBasis;
+    decision.statementEffectNote = statementEffectNote;
     decision.changedFromAI = false;
     decision.agentDisagreement = decision.id === 'D075';
     decision.certificationStatus = 'student_certified';
@@ -164,6 +197,7 @@ for (const decision of template.decisions) {
 
 const submission = {
   schemaVersion: '1.0', caseId: 'DPI-HT-01',
+  currency: { code: 'EUR', unit: 'whole euros', display: '€', note: 'All monetary values in this JSON, including statement effects, are whole EUR amounts, not thousands.' },
   student: { id: 'ri25001', name: 'Rihards Ilguns' },
   evidence: Object.entries(E).map(([id, file]) => ({ id, file, status: 'reviewed', reliability: ['bank', 'contracts', 'post'].includes(id) ? 'high' : 'supporting' })),
   decisions: template.decisions,

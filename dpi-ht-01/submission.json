@@ -1,6 +1,12 @@
 {
   "schemaVersion": "1.0",
   "caseId": "DPI-HT-01",
+  "currency": {
+    "code": "EUR",
+    "unit": "whole euros",
+    "display": "€",
+    "note": "All monetary values in this JSON, including statement effects, are whole EUR amounts, not thousands."
+  },
   "student": {
     "id": "ri25001",
     "name": "Rihards Ilguns"
@@ -579,6 +585,8 @@
         "equity": -90
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of management’s revenue entry",
+      "statementEffectNote": "Reclassifies cash already received from revenue to a contract liability; it does not create new cash.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -603,6 +611,8 @@
         "equity": -50
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of management’s income entry",
+      "statementEffectNote": "Reclassifies the bank receipt from income to a repayment obligation; the cash receipt is already recorded.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -620,13 +630,15 @@
       "independentChallenge": "Agent 2 agrees: the installed machine is a long-term productive asset.",
       "studentReasoning": "I capitalise the separately identified machine as PPE.",
       "statementEffect": {
-        "profit": 0,
+        "profit": 60,
         "cash": 0,
         "assets": 60,
         "liabilities": 0,
         "equity": 60
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of management’s repair-expense entry",
+      "statementEffectNote": "Reverses the EUR 60,000 expense and recognises PPE; the original cash payment is unchanged.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -644,13 +656,15 @@
       "independentChallenge": "Agent 2 agrees: the photo booth is equipment, not a one-period marketing cost.",
       "studentReasoning": "I capitalise the photo booth because it is available for use.",
       "statementEffect": {
-        "profit": 0,
+        "profit": 20,
         "cash": 0,
         "assets": 20,
         "liabilities": 0,
         "equity": 20
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of management’s marketing-expense entry",
+      "statementEffectNote": "Reverses the EUR 20,000 expense and recognises PPE; the original cash payment is unchanged.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -675,6 +689,8 @@
         "equity": -10
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of management’s PPE entry",
+      "statementEffectNote": "Removes a capitalised repair and recognises an expense; the original cash payment is unchanged.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -693,12 +709,14 @@
       "studentReasoning": "I classify the villa payment as an owner distribution, not a business expense.",
       "statementEffect": {
         "profit": 0,
-        "cash": 0,
-        "assets": 0,
+        "cash": -70,
+        "assets": -70,
         "liabilities": 0,
         "equity": -70
       },
       "changedFromAI": false,
+      "effectBasis": "Original cash distribution transaction",
+      "statementEffectNote": "The company paid cash for a non-business villa reservation, reducing cash, total assets and equity.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -717,12 +735,14 @@
       "studentReasoning": "I classify the owner-card payment as an owner distribution.",
       "statementEffect": {
         "profit": 0,
-        "cash": 0,
-        "assets": 0,
+        "cash": -40,
+        "assets": -40,
         "liabilities": 0,
         "equity": -40
       },
       "changedFromAI": false,
+      "effectBasis": "Original cash distribution transaction",
+      "statementEffectNote": "The company paid cash for owner-card spending, reducing cash, total assets and equity.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -747,6 +767,8 @@
         "equity": -405
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of management’s cost classification",
+      "statementEffectNote": "Recognises materials consumed as COGS and reduces inventory; no additional cash payment occurs in this correction.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -771,6 +793,8 @@
         "equity": 0
       },
       "changedFromAI": false,
+      "effectBasis": "Presentation reclassification only",
+      "statementEffectNote": "Moves payroll within expenses; total profit, cash, assets, liabilities and equity do not change.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -861,6 +885,8 @@
         "equity": -24
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted period-end depreciation",
+      "statementEffectNote": "Records the period-end non-cash depreciation charge and reduces PPE carrying value.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -885,6 +911,8 @@
         "equity": -18
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted receivable impairment",
+      "statementEffectNote": "Records the R-17 impairment at 31 August; it does not represent a new cash payment.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -909,6 +937,8 @@
         "equity": -22
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted inventory write-down",
+      "statementEffectNote": "Reduces damaged inventory to its recoverable value; it does not represent a new cash payment.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -933,6 +963,8 @@
         "equity": -25
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted legal provision",
+      "statementEffectNote": "Records the period-end expense and liability before any legal settlement cash is paid.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -998,11 +1030,13 @@
       "statementEffect": {
         "profit": 180,
         "cash": 180,
-        "assets": 0,
+        "assets": 180,
         "liabilities": 0,
         "equity": 180
       },
       "changedFromAI": false,
+      "effectBasis": "Original delivered-sale transaction",
+      "statementEffectNote": "EUR 180,000 cash was collected on an accepted delivery, increasing total assets and equity.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1022,11 +1056,13 @@
       "statementEffect": {
         "profit": 200,
         "cash": 142,
-        "assets": 58,
+        "assets": 200,
         "liabilities": 0,
         "equity": 200
       },
       "changedFromAI": false,
+      "effectBasis": "Original delivered-sale transaction",
+      "statementEffectNote": "EUR 142,000 cash plus EUR 58,000 receivable increases total assets by EUR 200,000.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1046,11 +1082,13 @@
       "statementEffect": {
         "profit": 100,
         "cash": 70,
-        "assets": 30,
+        "assets": 100,
         "liabilities": 0,
         "equity": 100
       },
       "changedFromAI": false,
+      "effectBasis": "Original delivered-sale transaction",
+      "statementEffectNote": "EUR 70,000 cash plus EUR 30,000 receivable increases total assets by EUR 100,000.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1070,11 +1108,13 @@
       "statementEffect": {
         "profit": 120,
         "cash": 95,
-        "assets": 25,
+        "assets": 120,
         "liabilities": 0,
         "equity": 120
       },
       "changedFromAI": false,
+      "effectBasis": "Original delivered-sale transaction",
+      "statementEffectNote": "EUR 95,000 cash plus EUR 25,000 receivable increases total assets by EUR 120,000.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1093,12 +1133,14 @@
       "studentReasoning": "I defer EUR 90,000 until the events are delivered.",
       "statementEffect": {
         "profit": -90,
-        "cash": 90,
+        "cash": 0,
         "assets": 0,
         "liabilities": 90,
         "equity": -90
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of management’s revenue entry",
+      "statementEffectNote": "Reclassifies cash already received from revenue to a contract liability; it does not create new cash.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1147,6 +1189,8 @@
         "equity": -18
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted receivable impairment",
+      "statementEffectNote": "Records the R-17 impairment at 31 August; it does not represent a new cash payment.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1171,6 +1215,8 @@
         "equity": -22
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted inventory write-down",
+      "statementEffectNote": "Reduces damaged inventory to its recoverable value; it does not represent a new cash payment.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1195,6 +1241,8 @@
         "equity": -25
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted legal provision",
+      "statementEffectNote": "Records the period-end expense and liability before any legal settlement cash is paid.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1219,6 +1267,8 @@
         "equity": -24
       },
       "changedFromAI": false,
+      "effectBasis": "Correction of omitted period-end depreciation",
+      "statementEffectNote": "Records the period-end non-cash depreciation charge and reduces PPE carrying value.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1236,13 +1286,15 @@
       "independentChallenge": "Agent 2 disagrees: it prefers the EUR 121,000 physical count and a EUR 9,000 COGS reduction.",
       "studentReasoning": "I retain EUR 112,000 until the EUR 9,000 difference is investigated; I do not record an unsupported gain.",
       "statementEffect": {
-        "profit": -31,
-        "cash": 0,
-        "assets": -31,
-        "liabilities": 0,
-        "equity": -31
+        "profit": null,
+        "cash": null,
+        "assets": null,
+        "liabilities": null,
+        "equity": null
       },
       "changedFromAI": false,
+      "effectBasis": "Closing-balance measurement selection — not a new journal entry",
+      "statementEffectNote": "EUR 112,000 is the selected closing inventory balance. Its component adjustments are D048 and D058; the EUR 9,000 count conflict is disclosed, not booked.",
       "agentDisagreement": true,
       "certificationStatus": "student_certified"
     },
@@ -1441,13 +1493,15 @@
       "independentChallenge": "Agent 2 agrees: valuation cannot use management figures contradicted by stronger evidence.",
       "studentReasoning": "I require corrected accounts and stated uncertainties before valuation.",
       "statementEffect": {
-        "profit": 0,
-        "cash": 0,
-        "assets": 0,
-        "liabilities": 0,
-        "equity": 0
+        "profit": null,
+        "cash": null,
+        "assets": null,
+        "liabilities": null,
+        "equity": null
       },
       "changedFromAI": false,
+      "effectBasis": "Governance approval conclusion — not a journal entry",
+      "statementEffectNote": "This decision controls whether the corrected accounts are approved for valuation; it has no direct statement effect.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     },
@@ -1559,13 +1613,15 @@
       "independentChallenge": "Agent 2 agrees: the claimed EUR 312,000 omits known adjustments and uses unsupported classifications.",
       "studentReasoning": "I reject the claimed profit for earn-out purposes.",
       "statementEffect": {
-        "profit": 0,
-        "cash": 0,
-        "assets": 0,
-        "liabilities": 0,
-        "equity": 0
+        "profit": null,
+        "cash": null,
+        "assets": null,
+        "liabilities": null,
+        "equity": null
       },
       "changedFromAI": false,
+      "effectBasis": "Governance comparison — not a journal entry",
+      "statementEffectNote": "This decision rejects an unreliable management-profit benchmark for earn-out purposes; it has no direct statement effect.",
       "agentDisagreement": false,
       "certificationStatus": "student_certified"
     }

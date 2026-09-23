@@ -6,6 +6,8 @@ This is a static Vercel-ready review site. Its required pages are:
 - `/review` - assessor queue for decisions, low-confidence items and certification gaps
 - `/submission.json` - machine-readable answer with all 100 decision IDs
 
+All monetary values are EUR in whole euros. Each material decision identifies whether its displayed effect is an original transaction, a correction to management's entry, a presentation reclassification, or a governance/closing-balance conclusion with no direct journal entry.
+
 ## Before submission
 
 1. Review the two disclosed limitations: the EUR 9,000 inventory difference and the absence of quantifiable insurance evidence.
